@@ -1,0 +1,18 @@
+@(key: String)
+
+@import helper._
+@import controllers.routes.javascript._
+
+@main("2 factor auth POC") {
+
+    <p>Verify SMS</p>
+
+    @helper.form(controllers.routes.Registration.onSmsVerification) {
+        <p>
+            <input type="text" name="verificationCode" placeholder="Verification Code" id="verificationCode">
+        </p>
+        <p>
+            <button type="submit" id="verifybutton">Verify</button>
+        </p>
+    }
+}

@@ -1,0 +1,19 @@
+@()(implicit flash: Flash)
+
+@main("2 factor auth POC") {
+
+    <p>You are in the public area where no authentication is required</p>
+
+    @flash.get("success").map { message =>
+    <p class="success">
+        @message
+    </p>
+    }
+
+    <ul>
+      <li><a href="@controllers.routes.Registration.register">Register</a></li>
+      <li><a href="@controllers.routes.Authentication.login">Login</a></li>
+      <li><a href="@controllers.routes.Restricted.index">Restricted Area</a></li>
+    </ul>
+
+}

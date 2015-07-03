@@ -1,0 +1,26 @@
+@(form: Form[(String,String)])(implicit flash: Flash)
+
+@main("2 factor auth POC") {
+
+    <p>Please provide your credentials in order to log in</p>
+
+    @helper.form(controllers.routes.Authentication.onLogin) {
+        
+        @form.globalError.map { error =>
+            <p class="error">
+                @error.message
+            </p>
+        }
+        
+        <p>
+            <input type="email" name="email" placeholder="Email" id="email" value="@form("email").value">
+        </p>
+        <p>
+            <input type="password" name="password" id="password" placeholder="Password">
+        </p>
+        <p>
+            <button type="submit" id="loginbutton">Login</button>
+        </p>
+        
+    }
+}

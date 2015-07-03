@@ -1,0 +1,11 @@
+@(user: models.User)
+
+@main("2 factor auth POC") {
+
+    <p>You are logged in as @user.email</p>
+
+    <ul>
+      <li><a href="@controllers.routes.Authentication.logout">Logout</a></li>
+    </ul>
+
+}

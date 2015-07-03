@@ -1,0 +1,16 @@
+@()
+
+@main("2 factor auth POC") {
+
+    <h1>Verify your credentials with the Verification Code</h1>
+
+    @helper.form(controllers.routes.Authentication.onQrcode) {
+
+        <p>
+            <input type="text" name="verificationCode" placeholder="Verification Code" id="verificationCode">
+        </p>
+        <p>
+            <button type="submit" id="verifybutton">Verify</button>
+        </p>
+    }
+}

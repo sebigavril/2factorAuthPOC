@@ -1,0 +1,19 @@
+@(otpAuthURL: String, key: String)
+
+@main("2 factor auth POC") {
+
+    <p>Set up Google Authenticator</p>
+
+    <img src=@otpAuthURL/>
+
+    @helper.form(controllers.routes.Registration.onQrcode) {
+
+        <p>
+            <input type="text" name="verificationCode" placeholder="Verification Code" id="verificationCode">
+        </p>
+        <p>
+            <button type="submit" id="verifybutton">Verify</button>
+        </p>
+    }
+    <a href="@controllers.routes.Registration.sms">I don't have a smartphone (use SMS)</a>
+}

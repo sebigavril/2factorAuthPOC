@@ -1,0 +1,18 @@
+@(key: String)
+
+@import helper._
+@import controllers.routes.javascript._
+
+@main("2 factor auth POC") {
+
+    <p>Set up SMS authentication</p>
+
+    @helper.form(controllers.routes.Registration.onSms) {
+        <p>
+            <input type="text" name="phoneNumber" placeholder="Phone Number" id="phoneNumber">
+        </p>
+        <p>
+            <button type="submit" id="sendsms">Send sms</button>
+        </p>
+    }
+}
